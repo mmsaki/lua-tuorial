@@ -324,3 +324,15 @@ Other notable fields (methods):
 - `__newindex(self, key, value)` - called by `__index` method
 - `__call(self, ... )` - allowss you to call a table as a function e.g. returns a state
 
+## Quick Neovim Goodies
+
+Keymappings to run lua code in nvim
+
+```lua
+-- press <space> <space> x in normal mode to run whole lua file
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+-- press <space> x in normal mode
+vim.keymap.set("n", "<space>x", ":.lua<CR>")
+-- press <space> x in visual mode to run lua snippet of code
+vim.keymap.set("v", "<space>x", ":lua<CR>")
+```
