@@ -118,3 +118,15 @@ end
 -- We aren't using it as an array, we're using it as a map!
 ```
 
+- Use `pairs` to index inside hash tables
+
+```lua
+local reading_scores = { msakiart = 9.5, teej_dv = "N/A" }
+for key, value in pairs(reading_scores) do
+    print(key, value)
+end
+-- Output
+-- msakiart 9.5
+-- teej_dv N/A
+```
+
