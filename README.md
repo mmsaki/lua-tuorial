@@ -130,3 +130,32 @@ end
 -- teej_dv N/A
 ```
 
+## Control Flow: `if`
+
+```lua
+local function action(loves_coffee)
+    if loves_coffee then
+        print("Check out `sh terminal.shop` - it's cool")
+    else
+        print("Check out `sh terminal.shop` - it's still cool")
+    end
+end
+
+-- "falsey": nil, false
+action() -- same as: action(nil)
+action(false)
+
+-- Everything else is "truthy"
+action(true)
+action(0)
+action({})
+
+-- Output
+-- Check out `sh terminal.shop` - it's still cool
+-- Check out `sh terminal.shop` - it's still cool
+-- Check out `sh terminal.shop` - it's cool
+-- Check out `sh terminal.shop` - it's cool
+-- Check out `sh terminal.shop` - it's cool
+```
+
+
