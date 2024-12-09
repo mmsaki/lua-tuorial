@@ -66,3 +66,23 @@ local list = { "first", 2, false, function() print("Fourth!") end }
 print("Yup, 1-indexed:", list[1])
 print("Fourth is 4 ..:", list[4]())
 ```
+
+Tables being used as a map ...
+
+```lua
+local t = {
+    literal_key = "a string",
+    ["an expression"] = "also works",
+    [function() end] = true
+}
+
+print("literal_key    : ", t.literal_key)
+print("an expression  : ", t["an expression"])
+print("function() end : ", t[function() end])
+
+-- Output
+-- literal_key   : a string
+-- an expression : also works
+-- function() end: nil
+```
+
