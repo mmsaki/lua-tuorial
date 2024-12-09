@@ -297,3 +297,24 @@ vim.print(v3 + v3)
 -- 0 6 14, <metatable>
 ```
 
+Implement indexing inside a table ( metatables )
+
+```lua
+local fib_mt = {
+    __index = function(self, key)
+        if key < 2 then return 1 end
+        -- Update the table, to save intermediate results ( caching )
+        self[key] = self[key - 2] + self[key - 1]
+        -- Return the result
+        return self[key]
+    end
+}
+
+local fib = setmetatable({}, fib_mt)
+
+print(fib[5])
+print(fib[1000])
+-- Output
+-- 7
+-- ~ 2 ** 208
+```
