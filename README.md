@@ -259,3 +259,15 @@ setup { other = true }
 -- 17 true
 ```
 
+## Functions: Colon Functions
+
+When we define a function on a table we can use the colon syntax:
+
+```lua
+local MyTable = {}
+
+-- Both these functions describe the same thing, creating a method in a table
+function MyTable.something(self, ... ) end
+function MyTable:something( ... ) end
+```
+
