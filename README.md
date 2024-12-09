@@ -65,6 +65,10 @@ Tables are like a list ...
 local list = { "first", 2, false, function() print("Fourth!") end }
 print("Yup, 1-indexed:", list[1])
 print("Fourth is 4 ..:", list[4]())
+-- Output
+-- Yuo, 1-indexed: first
+-- Fourth!
+-- Fourth is 4 ..:
 ```
 
 Tables being used as a map ...
@@ -86,3 +90,19 @@ print("function() end : ", t[function() end])
 -- function() end: nil
 ```
 
+## Control Flow: `for`
+
+```lua
+local favorite_accounts = { "msakiart", "teej_dv", "ThePrimeagen" }
+for index = 1, #favorite_accounts do
+    print(index, favorite_accounts[index])
+end
+
+for index, value in ipairs(favorite_accounts) do
+    print(index, value)
+end
+-- Output
+-- 1 msakiart
+-- 2 teej_dv
+-- 3 ThePrimeagen
+```
