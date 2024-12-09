@@ -195,3 +195,30 @@ print("last: ", last)
 -- last: 3
 ```
 
+- Value spreading ...
+    > Some values can get lost when they are unpacked into other functions
+
+```lua
+local variable_arguments = function( ... )
+    local arguments = { ... }
+    for i, v in ipairs(arguments) do print(i,v) end
+    return unpack(arguments)
+end
+
+print("===============")
+print("1:", variable_arguments("hello", "world", "!"))
+print("===============")
+print("2:", variable_arguments("hello", "world", "!"), "<lost>")
+
+-- Output
+-- ================
+-- 1: Hello
+-- 2: world
+-- 3: !
+-- 1: Hello world !
+-- ================
+-- 1: Hello
+-- 2: world
+-- 3: !
+-- 2: Hello <lost>
+```
