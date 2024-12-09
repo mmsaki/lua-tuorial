@@ -222,3 +222,21 @@ print("2:", variable_arguments("hello", "world", "!"), "<lost>")
 -- 3: !
 -- 2: Hello <lost>
 ```
+
+## Functions: Calling
+
+String shorthand
+
+> If the function takes a single string we can ignore the parentesis
+
+```lua
+local single_string = function(s)
+    return s .. " - WOW!"
+end
+
+local x = single_string("hi")
+local y = single_string "hi"
+print(x, y)
+-- Output
+-- hi - WOW !hi - WOW!
+```
