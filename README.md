@@ -240,3 +240,22 @@ print(x, y)
 -- Output
 -- hi - WOW !hi - WOW!
 ```
+
+Table Shorthand
+
+```lua
+local setup = function(opts)
+    if opts.default == nil then
+        opts.default = 17
+    end
+
+    print(opts.default, opts.other)
+end
+
+setup { default = 12, other = false }
+setup { other = true }
+-- Output
+-- 12 false
+-- 17 true
+```
+
