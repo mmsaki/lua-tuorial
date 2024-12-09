@@ -158,4 +158,20 @@ action({})
 -- Check out `sh terminal.shop` - it's cool
 ```
 
+## Modules
+
+Modules are just files. Nothing special about modules.
+
+```lua
+-- foo.lua
+local M = {}
+M.cool_function = function() end
+return M
+```
+
+```lua
+-- bar.lua
+local foo = require("foo")
+foo.cool_function()
+```
 
