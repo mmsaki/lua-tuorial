@@ -318,3 +318,9 @@ print(fib[1000])
 -- 7
 -- ~ 2 ** 208
 ```
+
+Other notable fields (methods):
+
+- `__newindex(self, key, value)` - called by `__index` method
+- `__call(self, ... )` - allowss you to call a table as a function e.g. returns a state
+
