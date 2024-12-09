@@ -12,7 +12,7 @@ Learning Lua following tutorials by [Teej](https://x.com/teej_dv/status/18639198
 --]]
 ```
 
-## Variables: Simplek Literals
+## Variables: Simple Literals
 ```lua
 local number = 5
 
@@ -26,4 +26,34 @@ local truth, lies = true, false
 local nothing = nil
 ```
 
-## 
+## Variables: Functions
+
+- Example 1
+
+```lua
+local greet = function(name)
+    print("Hello!", name)
+end
+
+local greet = function(name)
+    -- .. is string concatenation
+    print("Greetings, " .. name .. "!")
+end
+```
+
+- Example 2
+
+```lua
+local higher_order = function(value)
+    return function(another)
+        return value + another
+    end
+end
+
+local add_one = higher_order(1)
+print("add_one(2) ->", add_one(2))
+
+-- output
+-- add_one(2) -> 3
+```
+
