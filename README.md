@@ -57,3 +57,12 @@ print("add_one(2) ->", add_one(2))
 -- add_one(2) -> 3
 ```
 
+## Variables: Tables
+
+Tables are like a list ...
+
+```lua
+local list = { "first", 2, false, function() print("Fourth!") end }
+print("Yup, 1-indexed:", list[1])
+print("Fourth is 4 ..:", list[4]())
+```
