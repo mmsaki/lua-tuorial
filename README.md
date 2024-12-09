@@ -271,3 +271,29 @@ function MyTable.something(self, ... ) end
 function MyTable:something( ... ) end
 ```
 
+## Metatables
+
+Can we add two tables in lua? ...
+
+> If you want to add two tables you have to implement a `__add` method on the table
+
+```lua
+local vector_mt = {}
+vector_mt.__add = function(left, right)
+    return setmetatable({
+        left[1] + right[1],
+        left[2] + right[2],
+        left[3] + right[3],
+    }, vector_mt)
+end
+
+local v1 = setmetatable({ 3, 1, 5 }, vector_mt)
+local v2 = setmetatable({ -3, 2, 2 }, vector_mt)
+local v3 = v1 + v2
+vim.print(v3[1], v3[2], v3[3])
+vim.print(v3 + v3)
+-- Output
+-- 0 3 7
+-- 0 6 14, <metatable>
+```
+
